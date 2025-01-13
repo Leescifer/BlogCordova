@@ -22,6 +22,14 @@ const db = mysql.createConnection({
 }
 )
 
+app.get('/', (req, res) => {
+    res.send('Gwapo ko!')
+} )
+
 app.listen(port, () => {
-    console.log('Naminaw ko ha! Diko bungol!')
+    console.log(`listening on port ${port}`)
+})
+
+app.post('/signup', (req, res) => {
+    const sql = "INSERT INTO login (name, age, gender) Values(?, ?, ?)"
 })
